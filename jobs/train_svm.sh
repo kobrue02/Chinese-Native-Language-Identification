@@ -1,5 +1,5 @@
 #!/bin/bash
-#SBATCH --job-name=nli-neural
+#SBATCH --job-name=nli-svm
 #SBATCH --partition=gpu_a100_il
 #SBATCH --nodes=1
 #SBATCH --ntasks=1
