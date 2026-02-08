@@ -1,12 +1,15 @@
 #!/bin/bash
 #SBATCH --job-name=nli-neural
-#SBATCH --output=results/slurm_neural_%j.out
-#SBATCH --error=results/slurm_neural_%j.err
-#SBATCH --partition=gpu
 #SBATCH --partition=gpu_a100_il
-#SBATCH --cpus-per-task=4
-#SBATCH --mem=16G
+#SBATCH --nodes=1
+#SBATCH --ntasks=1
+#SBATCH --cpus-per-task=16
+#SBATCH --gres=gpu:1
 #SBATCH --time=04:00:00
+#SBATCH --output=logs/%x_%j.out
+#SBATCH --error=logs/%x_%j.err
+#SBATCH --mail-type=ALL
+#SBATCH --mail-user=konrad-rudolf.brueggemann@student.uni-tuebingen.de
 
 cd "$SLURM_SUBMIT_DIR"
 module load devel/cuda/12.8
