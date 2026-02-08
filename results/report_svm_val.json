@@ -1,0 +1,206 @@
+{
+  "accuracy": 0.7728894173602854,
+  "macro_f1": 0.4927263106208624,
+  "weighted_f1": 0.773429922360869,
+  "classification_report": {
+    "Cambodia": {
+      "precision": 0.5135135135135135,
+      "recall": 0.5757575757575758,
+      "f1-score": 0.5428571428571428,
+      "support": 33.0
+    },
+    "Canada": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 1.0
+    },
+    "Colombia": {
+      "precision": 0.3333333333333333,
+      "recall": 1.0,
+      "f1-score": 0.5,
+      "support": 1.0
+    },
+    "Costa Rica": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1-score": 0.0,
+      "support": 1.0
+    },
+    "Ecuador": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1-score": 0.0,
+      "support": 0.0
+    },
+    "France": {
+      "precision": 1.0,
+      "recall": 0.3333333333333333,
+      "f1-score": 0.5,
+      "support": 3.0
+    },
+    "Germany": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1-score": 0.0,
+      "support": 1.0
+    },
+    "Indonesia": {
+      "precision": 0.8401253918495298,
+      "recall": 0.7928994082840237,
+      "f1-score": 0.8158295281582952,
+      "support": 338.0
+    },
+    "Japan": {
+      "precision": 0.72,
+      "recall": 0.6666666666666666,
+      "f1-score": 0.6923076923076923,
+      "support": 27.0
+    },
+    "Kyrgyzstan": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1-score": 0.0,
+      "support": 1.0
+    },
+    "Laos": {
+      "precision": 0.7560975609756098,
+      "recall": 0.775,
+      "f1-score": 0.7654320987654321,
+      "support": 40.0
+    },
+    "Madagascar": {
+      "precision": 0.5384615384615384,
+      "recall": 1.0,
+      "f1-score": 0.7,
+      "support": 7.0
+    },
+    "Malaysia": {
+      "precision": 0.8333333333333334,
+      "recall": 0.8333333333333334,
+      "f1-score": 0.8333333333333334,
+      "support": 6.0
+    },
+    "Mexico": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1-score": 0.0,
+      "support": 0.0
+    },
+    "Mongolia": {
+      "precision": 0.5833333333333334,
+      "recall": 0.5833333333333334,
+      "f1-score": 0.5833333333333334,
+      "support": 12.0
+    },
+    "Myanmar": {
+      "precision": 0.7142857142857143,
+      "recall": 0.8536585365853658,
+      "f1-score": 0.7777777777777778,
+      "support": 41.0
+    },
+    "New Zealand": {
+      "precision": 1.0,
+      "recall": 0.5,
+      "f1-score": 0.6666666666666666,
+      "support": 2.0
+    },
+    "North Korea": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1-score": 0.0,
+      "support": 1.0
+    },
+    "Panama": {
+      "precision": 0.8,
+      "recall": 0.7272727272727273,
+      "f1-score": 0.7619047619047619,
+      "support": 11.0
+    },
+    "Peru": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1-score": 0.0,
+      "support": 2.0
+    },
+    "Philippines": {
+      "precision": 0.8181818181818182,
+      "recall": 0.9310344827586207,
+      "f1-score": 0.8709677419354839,
+      "support": 29.0
+    },
+    "Russia": {
+      "precision": 0.6666666666666666,
+      "recall": 0.6666666666666666,
+      "f1-score": 0.6666666666666666,
+      "support": 3.0
+    },
+    "South Africa": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1-score": 0.0,
+      "support": 1.0
+    },
+    "South Korea": {
+      "precision": 0.6282051282051282,
+      "recall": 0.8596491228070176,
+      "f1-score": 0.725925925925926,
+      "support": 57.0
+    },
+    "Spain": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1-score": 0.0,
+      "support": 0.0
+    },
+    "Sweden": {
+      "precision": 1.0,
+      "recall": 0.5,
+      "f1-score": 0.6666666666666666,
+      "support": 2.0
+    },
+    "Thailand": {
+      "precision": 0.7916666666666666,
+      "recall": 0.7307692307692307,
+      "f1-score": 0.76,
+      "support": 130.0
+    },
+    "Turkey": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 3.0
+    },
+    "USA": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1-score": 0.0,
+      "support": 2.0
+    },
+    "Venezuela": {
+      "precision": 0.5,
+      "recall": 0.6666666666666666,
+      "f1-score": 0.5714285714285714,
+      "support": 3.0
+    },
+    "Vietnam": {
+      "precision": 0.92,
+      "recall": 0.8313253012048193,
+      "f1-score": 0.8734177215189873,
+      "support": 83.0
+    },
+    "accuracy": 0.7728894173602854,
+    "macro avg": {
+      "precision": 0.5147485160905221,
+      "recall": 0.5105602059819154,
+      "f1-score": 0.4927263106208624,
+      "support": 841.0
+    },
+    "weighted avg": {
+      "precision": 0.7825114636385512,
+      "recall": 0.7728894173602854,
+      "f1-score": 0.773429922360869,
+      "support": 841.0
+    }
+  }
+}
