@@ -12,11 +12,6 @@
 #SBATCH --mail-user=konrad-rudolf.brueggemann@student.uni-tuebingen.de
 
 cd "$SLURM_SUBMIT_DIR"
-module load devel/cuda/12.8
 module load devel/python/3.13.3-llvm-19.1
-
-# Let PyTorch use its bundled cuDNN instead of the system one
-TORCH_LIB=$(uv run python -c "import torch; print(torch.__path__[0])")/lib
-export LD_LIBRARY_PATH="$TORCH_LIB:$LD_LIBRARY_PATH"
 
 uv run python train_neural.py
