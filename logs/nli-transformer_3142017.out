@@ -1,0 +1,33 @@
+Device: cuda
+Loading data...
+Loading bert-base-chinese...
+Tokenizing texts...
+Epoch   1 | train_loss=3.5556  val_loss=2.9053  val_macro_f1=0.0845  (143.0s)
+Epoch   2 | train_loss=2.8973  val_loss=2.2142  val_macro_f1=0.2978  (140.7s)
+Epoch   3 | train_loss=2.3897  val_loss=1.9829  val_macro_f1=0.3332  (140.5s)
+Epoch   4 | train_loss=2.0136  val_loss=1.8005  val_macro_f1=0.3434  (140.4s)
+Epoch   5 | train_loss=1.7477  val_loss=1.7304  val_macro_f1=0.3617  (140.4s)
+
+============================================================
+Results: bert-base-chinese
+============================================================
+  Accuracy:     0.5327
+  Macro-F1:     0.3011
+  Weighted-F1:  0.5509
+Report saved to /pfs/data6/home/tu/tu_tu/tu_zxoqp65/work/NNP-Chinese-NLI/results/report_bert-base-chinese.json
+Saved confusion_matrix_bert-base-chinese.png
+
+============================= JOB FEEDBACK =============================
+
+NodeName=uc2n909
+Job ID: 3142017
+Cluster: uc3
+User/Group: tu_zxoqp65/tu_tu
+State: COMPLETED (exit code 0)
+Nodes: 1
+Cores per node: 16
+CPU Utilized: 00:12:18
+CPU Efficiency: 5.71% of 03:35:28 core-walltime
+Job Wall-clock time: 00:13:28
+Memory Utilized: 2.96 GB
+Memory Efficiency: 2.37% of 124.51 GB (124.51 GB/node)

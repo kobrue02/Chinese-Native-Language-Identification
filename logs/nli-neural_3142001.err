@@ -1,0 +1,41 @@
+/pfs/data6/home/tu/tu_tu/tu_zxoqp65/work/NNP-Chinese-NLI/.venv/lib/python3.14/site-packages/jieba/__init__.py:44: SyntaxWarning: "\." is an invalid escape sequence. Such sequences will not work in the future. Did you mean "\\."? A raw string is also an option.
+  re_han_default = re.compile("([\u4E00-\u9FD5a-zA-Z0-9+#&\._%\-]+)", re.U)
+/pfs/data6/home/tu/tu_tu/tu_zxoqp65/work/NNP-Chinese-NLI/.venv/lib/python3.14/site-packages/jieba/__init__.py:46: SyntaxWarning: "\s" is an invalid escape sequence. Such sequences will not work in the future. Did you mean "\\s"? A raw string is also an option.
+  re_skip_default = re.compile("(\r\n|\s)", re.U)
+/pfs/data6/home/tu/tu_tu/tu_zxoqp65/work/NNP-Chinese-NLI/.venv/lib/python3.14/site-packages/jieba/finalseg/__init__.py:78: SyntaxWarning: "\." is an invalid escape sequence. Such sequences will not work in the future. Did you mean "\\."? A raw string is also an option.
+  re_skip = re.compile("([a-zA-Z0-9]+(?:\.\d+)?%?)")
+/pfs/data6/home/tu/tu_tu/tu_zxoqp65/work/NNP-Chinese-NLI/.venv/lib/python3.14/site-packages/jieba/_compat.py:18: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  import pkg_resources
+Building prefix dict from the default dictionary ...
+Dumping model to file cache /scratch/slurm_tmpdir/job_3142001/jieba.cache
+Loading model cost 0.437 seconds.
+Prefix dict has been built successfully.
+Traceback (most recent call last):
+  File "/pfs/data6/home/tu/tu_tu/tu_zxoqp65/work/NNP-Chinese-NLI/train_neural.py", line 203, in <module>
+    main()
+    ~~~~^^
+  File "/pfs/data6/home/tu/tu_tu/tu_zxoqp65/work/NNP-Chinese-NLI/train_neural.py", line 185, in main
+    lstm_model = BiLSTMClassifier(len(vocab), num_classes).to(DEVICE)
+  File "/pfs/data6/home/tu/tu_tu/tu_zxoqp65/work/NNP-Chinese-NLI/.venv/lib/python3.14/site-packages/torch/nn/modules/module.py", line 1381, in to
+    return self._apply(convert)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/pfs/data6/home/tu/tu_tu/tu_zxoqp65/work/NNP-Chinese-NLI/.venv/lib/python3.14/site-packages/torch/nn/modules/module.py", line 933, in _apply
+    module._apply(fn)
+    ~~~~~~~~~~~~~^^^^
+  File "/pfs/data6/home/tu/tu_tu/tu_zxoqp65/work/NNP-Chinese-NLI/.venv/lib/python3.14/site-packages/torch/nn/modules/rnn.py", line 292, in _apply
+    self._init_flat_weights()
+    ~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/pfs/data6/home/tu/tu_tu/tu_zxoqp65/work/NNP-Chinese-NLI/.venv/lib/python3.14/site-packages/torch/nn/modules/rnn.py", line 216, in _init_flat_weights
+    self.flatten_parameters()
+    ~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/pfs/data6/home/tu/tu_tu/tu_zxoqp65/work/NNP-Chinese-NLI/.venv/lib/python3.14/site-packages/torch/nn/modules/rnn.py", line 248, in flatten_parameters
+    or not torch.backends.cudnn.is_acceptable(fw)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^
+  File "/pfs/data6/home/tu/tu_tu/tu_zxoqp65/work/NNP-Chinese-NLI/.venv/lib/python3.14/site-packages/torch/backends/cudnn/__init__.py", line 139, in is_acceptable
+    if not _init():
+           ~~~~~^^
+  File "/pfs/data6/home/tu/tu_tu/tu_zxoqp65/work/NNP-Chinese-NLI/.venv/lib/python3.14/site-packages/torch/backends/cudnn/__init__.py", line 72, in _init
+    raise RuntimeError(
+    ...<3 lines>...
+    )
+RuntimeError: cuDNN version incompatibility: PyTorch was compiled  against (9, 10, 2) but found runtime version (9, 7, 1). PyTorch already comes bundled with cuDNN. One option to resolving this error is to ensure PyTorch can find the bundled cuDNN. Looks like your LD_LIBRARY_PATH contains incompatible version of cudnn. Please either remove it from the path or install cudnn (9, 10, 2)

@@ -1,0 +1,45 @@
+Loading data...
+Extracting features (this may take a few minutes)...
+Feature extraction took 156.8s
+Feature matrix shape: (6778, 100054)
+
+Running grid search...
+Fitting 3 folds for each of 4 candidates, totalling 12 fits
+Best C: 1.0,  Best macro-F1 (CV): 0.2759
+
+── Validation Set ──
+
+============================================================
+Results: SVM_val
+============================================================
+  Accuracy:     0.7729
+  Macro-F1:     0.4897
+  Weighted-F1:  0.7734
+Report saved to /pfs/data6/home/tu/tu_tu/tu_zxoqp65/work/NNP-Chinese-NLI/results/report_svm_val.json
+Saved confusion_matrix_svm_val.png
+
+── Test Set ──
+
+============================================================
+Results: SVM_test
+============================================================
+  Accuracy:     0.7515
+  Macro-F1:     0.4741
+  Weighted-F1:  0.7521
+Report saved to /pfs/data6/home/tu/tu_tu/tu_zxoqp65/work/NNP-Chinese-NLI/results/report_svm_test.json
+Saved confusion_matrix_svm_test.png
+
+============================= JOB FEEDBACK =============================
+
+NodeName=uc2n912
+Job ID: 3142025
+Cluster: uc3
+User/Group: tu_zxoqp65/tu_tu
+State: COMPLETED (exit code 0)
+Nodes: 1
+Cores per node: 16
+CPU Utilized: 00:06:17
+CPU Efficiency: 5.13% of 02:02:24 core-walltime
+Job Wall-clock time: 00:07:39
+Memory Utilized: 901.79 MB
+Memory Efficiency: 0.71% of 124.51 GB (124.51 GB/node)

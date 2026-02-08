@@ -1,0 +1,24 @@
+Device: cuda
+Loading data...
+Building vocabulary...
+Vocabulary size: 8000
+Tokenizing...
+
+============================================================
+Training BiLSTM
+============================================================
+
+============================= JOB FEEDBACK =============================
+
+NodeName=uc2n909
+Job ID: 3142001
+Cluster: uc3
+User/Group: tu_zxoqp65/tu_tu
+State: FAILED (exit code 1)
+Nodes: 1
+Cores per node: 16
+CPU Utilized: 00:00:38
+CPU Efficiency: 1.36% of 00:46:24 core-walltime
+Job Wall-clock time: 00:02:54
+Memory Utilized: 794.77 MB
+Memory Efficiency: 0.62% of 124.51 GB (124.51 GB/node)

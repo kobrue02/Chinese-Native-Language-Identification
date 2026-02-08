@@ -1,7 +1,7 @@
 {
   "accuracy": 0.7728894173602854,
-  "macro_f1": 0.4927263106208624,
-  "weighted_f1": 0.773429922360869,
+  "macro_f1": 0.489675257642029,
+  "weighted_f1": 0.7734403734743069,
   "classification_report": {
     "Cambodia": {
       "precision": 0.5135135135135135,
@@ -34,9 +34,9 @@
       "support": 0.0
     },
     "France": {
-      "precision": 1.0,
+      "precision": 0.5,
       "recall": 0.3333333333333333,
-      "f1-score": 0.5,
+      "f1-score": 0.4,
       "support": 3.0
     },
     "Germany": {
@@ -142,9 +142,9 @@
       "support": 1.0
     },
     "South Korea": {
-      "precision": 0.6282051282051282,
+      "precision": 0.6363636363636364,
       "recall": 0.8596491228070176,
-      "f1-score": 0.725925925925926,
+      "f1-score": 0.7313432835820896,
       "support": 57.0
     },
     "Spain": {
@@ -191,15 +191,15 @@
     },
     "accuracy": 0.7728894173602854,
     "macro avg": {
-      "precision": 0.5147485160905221,
+      "precision": 0.4988826615149901,
       "recall": 0.5105602059819154,
-      "f1-score": 0.4927263106208624,
+      "f1-score": 0.489675257642029,
       "support": 841.0
     },
     "weighted avg": {
-      "precision": 0.7825114636385512,
+      "precision": 0.7812808274495321,
       "recall": 0.7728894173602854,
-      "f1-score": 0.773429922360869,
+      "f1-score": 0.7734403734743069,
       "support": 841.0
     }
   }

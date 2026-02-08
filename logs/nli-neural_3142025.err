@@ -1,0 +1,16 @@
+/pfs/data6/home/tu/tu_tu/tu_zxoqp65/work/NNP-Chinese-NLI/.venv/lib/python3.14/site-packages/jieba/_compat.py:18: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  import pkg_resources
+/pfs/data6/home/tu/tu_tu/tu_zxoqp65/work/NNP-Chinese-NLI/.venv/lib/python3.14/site-packages/jieba/posseg/__init__.py:16: SyntaxWarning: "\." is an invalid escape sequence. Such sequences will not work in the future. Did you mean "\\."? A raw string is also an option.
+  re_skip_detail = re.compile("([\.0-9]+|[a-zA-Z0-9]+)")
+/pfs/data6/home/tu/tu_tu/tu_zxoqp65/work/NNP-Chinese-NLI/.venv/lib/python3.14/site-packages/jieba/posseg/__init__.py:17: SyntaxWarning: "\." is an invalid escape sequence. Such sequences will not work in the future. Did you mean "\\."? A raw string is also an option.
+  re_han_internal = re.compile("([\u4E00-\u9FD5a-zA-Z0-9+#&\._]+)")
+/pfs/data6/home/tu/tu_tu/tu_zxoqp65/work/NNP-Chinese-NLI/.venv/lib/python3.14/site-packages/jieba/posseg/__init__.py:18: SyntaxWarning: "\s" is an invalid escape sequence. Such sequences will not work in the future. Did you mean "\\s"? A raw string is also an option.
+  re_skip_internal = re.compile("(\r\n|\s)")
+/pfs/data6/home/tu/tu_tu/tu_zxoqp65/work/NNP-Chinese-NLI/.venv/lib/python3.14/site-packages/jieba/posseg/__init__.py:21: SyntaxWarning: "\." is an invalid escape sequence. Such sequences will not work in the future. Did you mean "\\."? A raw string is also an option.
+  re_num = re.compile("[\.0-9]+")
+Building prefix dict from the default dictionary ...
+Dumping model to file cache /scratch/slurm_tmpdir/job_3142025/jieba.cache
+Loading model cost 0.427 seconds.
+Prefix dict has been built successfully.
+/pfs/data6/home/tu/tu_tu/tu_zxoqp65/work/NNP-Chinese-NLI/.venv/lib/python3.14/site-packages/sklearn/model_selection/_split.py:813: UserWarning: The least populated class in y has only 1 members, which is less than n_splits=3.
+  warnings.warn(
