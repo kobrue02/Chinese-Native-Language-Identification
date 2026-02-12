@@ -1,11 +1,11 @@
 #!/bin/bash
-#SBATCH --job-name=nli-transformer
+#SBATCH --job-name=nli-probe
 #SBATCH --partition=gpu_a100_il
 #SBATCH --nodes=1
 #SBATCH --ntasks=1
 #SBATCH --cpus-per-task=16
 #SBATCH --gres=gpu:1
-#SBATCH --time=04:00:00
+#SBATCH --time=02:00:00
 #SBATCH --output=logs/%x_%A_%a.out
 #SBATCH --error=logs/%x_%A_%a.err
 #SBATCH --mail-type=ALL
@@ -30,7 +30,11 @@ MODELS=(
     "DMetaSoul/Dmeta-embedding-zh-small"
 )
 
-MODEL="${MODELS[$SLURM_ARRAY_TASK_ID]}"
-echo "=== Running model: $MODEL (array index $SLURM_ARRAY_TASK_ID) ==="
+# Larger models need smaller batch sizes
+BATCH_SIZES=(32 32 8 32 32 32 32 32 16 16 4 32)
 
-uv run python train_transformer.py --model "$MODEL"
+MODEL="${MODELS[$SLURM_ARRAY_TASK_ID]}"
+BS="${BATCH_SIZES[$SLURM_ARRAY_TASK_ID]}"
+echo "=== Probe: $MODEL (batch_size=$BS, array index $SLURM_ARRAY_TASK_ID) ==="
+
+uv run python train_probe.py --model "$MODEL" --batch-size "$BS"

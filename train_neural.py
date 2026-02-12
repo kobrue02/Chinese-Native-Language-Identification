@@ -8,6 +8,10 @@ import numpy as np
 import torch
 import torch.nn as nn
 from torch.utils.data import DataLoader, Dataset
+<<<<<<< HEAD
+=======
+from tqdm import tqdm
+>>>>>>> e689c55 (add more scripts and features)
 
 import config
 from data_loader import load_and_split
@@ -24,7 +28,11 @@ DEVICE = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 def build_vocab(texts: list[str], max_size: int) -> dict[str, int]:
     """Build a word-to-index vocabulary from training texts using jieba."""
     counter: Counter[str] = Counter()
+<<<<<<< HEAD
     for text in texts:
+=======
+    for text in tqdm(texts, desc="Building vocab"):
+>>>>>>> e689c55 (add more scripts and features)
         counter.update(jieba.cut(text))
     # 0 = pad, 1 = unk
     vocab = {"<PAD>": 0, "<UNK>": 1}
@@ -39,7 +47,11 @@ def texts_to_indices(
     """Convert texts to padded/truncated index sequences."""
     result = np.zeros((len(texts), max_len), dtype=np.int64)
     unk_idx = vocab["<UNK>"]
+<<<<<<< HEAD
     for i, text in enumerate(texts):
+=======
+    for i, text in enumerate(tqdm(texts, desc="Tokenizing")):
+>>>>>>> e689c55 (add more scripts and features)
         tokens = list(jieba.cut(text))[:max_len]
         for j, tok in enumerate(tokens):
             result[i, j] = vocab.get(tok, unk_idx)
@@ -72,10 +84,18 @@ def compute_class_weights(labels: np.ndarray, num_classes: int) -> torch.Tensor:
     return torch.tensor(weights, dtype=torch.float32)
 
 
+<<<<<<< HEAD
 def train_epoch(model, loader, criterion, optimizer):
     model.train()
     total_loss = 0
     for X_batch, y_batch in loader:
+=======
+def train_epoch(model, loader, criterion, optimizer, epoch=0):
+    model.train()
+    total_loss = 0
+    pbar = tqdm(loader, desc=f"  Train epoch {epoch}", leave=False)
+    for X_batch, y_batch in pbar:
+>>>>>>> e689c55 (add more scripts and features)
         X_batch, y_batch = X_batch.to(DEVICE), y_batch.to(DEVICE)
         optimizer.zero_grad()
         logits = model(X_batch)
@@ -83,15 +103,27 @@ def train_epoch(model, loader, criterion, optimizer):
         loss.backward()
         optimizer.step()
         total_loss += loss.item() * len(y_batch)
+<<<<<<< HEAD
+=======
+        pbar.set_postfix(loss=f"{loss.item():.4f}")
+>>>>>>> e689c55 (add more scripts and features)
     return total_loss / len(loader.dataset)
 
 
 @torch.no_grad()
+<<<<<<< HEAD
 def evaluate_epoch(model, loader, criterion):
     model.eval()
     total_loss = 0
     all_preds, all_labels = [], []
     for X_batch, y_batch in loader:
+=======
+def evaluate_epoch(model, loader, criterion, desc="Eval"):
+    model.eval()
+    total_loss = 0
+    all_preds, all_labels = [], []
+    for X_batch, y_batch in tqdm(loader, desc=f"  {desc}", leave=False):
+>>>>>>> e689c55 (add more scripts and features)
         X_batch, y_batch = X_batch.to(DEVICE), y_batch.to(DEVICE)
         logits = model(X_batch)
         total_loss += criterion(logits, y_batch).item() * len(y_batch)
@@ -113,8 +145,13 @@ def train_model(model, train_loader, val_loader, criterion):
 
     for epoch in range(1, CFG["epochs"] + 1):
         t0 = time.time()
+<<<<<<< HEAD
         train_loss = train_epoch(model, train_loader, criterion, optimizer)
         val_loss, val_preds, val_labels = evaluate_epoch(model, val_loader, criterion)
+=======
+        train_loss = train_epoch(model, train_loader, criterion, optimizer, epoch)
+        val_loss, val_preds, val_labels = evaluate_epoch(model, val_loader, criterion, "Val")
+>>>>>>> e689c55 (add more scripts and features)
         elapsed = time.time() - t0
 
         from sklearn.metrics import f1_score
@@ -185,7 +222,11 @@ def main():
     lstm_model = BiLSTMClassifier(len(vocab), num_classes).to(DEVICE)
     lstm_model = train_model(lstm_model, train_loader, val_loader, criterion)
 
+<<<<<<< HEAD
     _, test_preds, test_labels = evaluate_epoch(lstm_model, test_loader, criterion)
+=======
+    _, test_preds, test_labels = evaluate_epoch(lstm_model, test_loader, criterion, "Test")
+>>>>>>> e689c55 (add more scripts and features)
     evaluate_and_report(test_labels, test_preds, label_names, "BiLSTM")
 
     # ── Train TextCNN ─────────────────────────────────────────────────────
@@ -195,7 +236,11 @@ def main():
     cnn_model = TextCNN(len(vocab), num_classes).to(DEVICE)
     cnn_model = train_model(cnn_model, train_loader, val_loader, criterion)
 
+<<<<<<< HEAD
     _, test_preds, test_labels = evaluate_epoch(cnn_model, test_loader, criterion)
+=======
+    _, test_preds, test_labels = evaluate_epoch(cnn_model, test_loader, criterion, "Test")
+>>>>>>> e689c55 (add more scripts and features)
     evaluate_and_report(test_labels, test_preds, label_names, "TextCNN")
 
 

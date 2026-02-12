@@ -1,3 +1,6 @@
 .venv/
 __pycache__/
 JCLCv2/
+*.json
+*.png
+*.tex

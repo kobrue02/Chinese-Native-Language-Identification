@@ -31,7 +31,6 @@ NEURAL_CONFIG = {
 }
 
 TRANSFORMER_CONFIG = {
-    "model_name": "bert-base-chinese",
     "max_length": 512,
     "batch_size": 16,
     "lr": 2e-5,
@@ -39,3 +38,21 @@ TRANSFORMER_CONFIG = {
     "warmup_ratio": 0.1,
     "patience": 2,
 }
+
+# Models to compare. "type" determines loading strategy:
+#   "classifier" → AutoModelForSequenceClassification (has built-in head)
+#   "embedding"  → AutoModel + linear classification head
+ENCODER_MODELS = [
+    {"name": "google-bert/bert-base-chinese", "type": "classifier"},
+    {"name": "google-bert/bert-base-uncased", "type": "classifier"},
+    {"name": "google-bert/bert-large-uncased", "type": "classifier"},
+    {"name": "google-bert/bert-base-multilingual-cased", "type": "classifier"},
+    {"name": "hfl/chinese-roberta-wwm-ext", "type": "classifier"},
+    {"name": "voidful/albert_chinese_base", "type": "classifier"},
+    {"name": "shibing624/text2vec-base-chinese", "type": "embedding"},
+    {"name": "jinaai/jina-embeddings-v2-base-zh", "type": "embedding"},
+    {"name": "jinaai/jina-embeddings-v3", "type": "embedding"},
+    {"name": "Qwen/Qwen3-Embedding-0.6B", "type": "embedding"},
+    {"name": "Qwen/Qwen3-Embedding-4B", "type": "embedding"},
+    {"name": "DMetaSoul/Dmeta-embedding-zh-small", "type": "embedding"},
+]

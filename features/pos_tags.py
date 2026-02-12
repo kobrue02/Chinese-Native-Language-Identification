@@ -3,6 +3,10 @@
 import numpy as np
 import jieba.posseg as pseg
 from sklearn.preprocessing import normalize
+<<<<<<< HEAD
+=======
+from tqdm import tqdm
+>>>>>>> e689c55 (add more scripts and features)
 
 # All jieba POS tags we track (ICTCLAS tagset)
 POS_TAGS = [
@@ -73,7 +77,11 @@ def extract_pos_features(texts: list[str]) -> np.ndarray:
     n = len(texts)
     features = np.zeros((n, len(POS_TAGS)), dtype=np.float64)
 
+<<<<<<< HEAD
     for i, text in enumerate(texts):
+=======
+    for i, text in enumerate(tqdm(texts, desc="POS tagging")):
+>>>>>>> e689c55 (add more scripts and features)
         for word, flag in pseg.cut(text):
             idx = _TAG2IDX.get(flag)
             if idx is not None:

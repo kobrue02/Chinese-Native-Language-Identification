@@ -2,6 +2,10 @@ import pandas as pd
 import numpy as np
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import LabelEncoder
+<<<<<<< HEAD
+=======
+from tqdm import tqdm
+>>>>>>> e689c55 (add more scripts and features)
 
 import config
 
@@ -15,7 +19,11 @@ def load_corpus() -> pd.DataFrame:
     )
     # Load text for each document
     texts = []
+<<<<<<< HEAD
     for doc_id in df["doc_id"]:
+=======
+    for doc_id in tqdm(df["doc_id"], desc="Loading texts"):
+>>>>>>> e689c55 (add more scripts and features)
         path = config.DATA_DIR / f"{doc_id}.txt"
         texts.append(path.read_text(encoding="utf-8").strip())
     df["text"] = texts
@@ -38,8 +46,11 @@ def stratified_split(
     For classes with fewer than 3 samples, all samples go to train to
     avoid errors in stratified splitting.
     """
+<<<<<<< HEAD
     rng = np.random.RandomState(config.RANDOM_SEED)
 
+=======
+>>>>>>> e689c55 (add more scripts and features)
     # Drop any rows with missing language
     df = df.dropna(subset=["native_language"])
 
