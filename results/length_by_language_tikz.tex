@@ -1,0 +1,28 @@
+\begin{figure}[htbp]
+\centering
+\begin{tikzpicture}
+\begin{axis}[
+    width=0.9\textwidth,
+    height=6cm,
+    xlabel={Text length (characters)},
+    ylabel={Density},
+    legend style={at={(0.97,0.97)}, anchor=north east, font=\small},
+    grid=major,
+    grid style={gray!30},
+    no markers,
+]
+\addplot[blue, thick] table[x=x, y=y] {length_kde_lang_indonesia.dat};
+\addlegendentry{Indonesia}
+\addplot[red, thick] table[x=x, y=y] {length_kde_lang_thailand.dat};
+\addlegendentry{Thailand}
+\addplot[green!60!black, thick] table[x=x, y=y] {length_kde_lang_vietnam.dat};
+\addlegendentry{Vietnam}
+\addplot[orange, thick] table[x=x, y=y] {length_kde_lang_south_korea.dat};
+\addlegendentry{South Korea}
+\addplot[purple, thick] table[x=x, y=y] {length_kde_lang_myanmar.dat};
+\addlegendentry{Myanmar}
+\end{axis}
+\end{tikzpicture}
+\caption{Text length distribution by native language (top 5).}
+\label{fig:length-by-language}
+\end{figure}

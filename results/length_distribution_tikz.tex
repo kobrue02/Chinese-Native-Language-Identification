@@ -1,0 +1,23 @@
+\begin{figure}[htbp]
+\centering
+\begin{tikzpicture}
+\begin{axis}[
+    width=0.9\textwidth,
+    height=6cm,
+    xlabel={Text length},
+    ylabel={Density},
+    legend style={at={(0.97,0.97)}, anchor=north east},
+    grid=major,
+    grid style={gray!30},
+    no markers,
+    thick,
+]
+\addplot[blue, solid] table[x=x, y=y] {length_kde_chars.dat};
+\addlegendentry{Characters}
+\addplot[red, dashed] table[x=x, y=y] {length_kde_words.dat};
+\addlegendentry{Words (jieba)}
+\end{axis}
+\end{tikzpicture}
+\caption{Text length distribution (kernel density estimate).}
+\label{fig:length-distribution}
+\end{figure}

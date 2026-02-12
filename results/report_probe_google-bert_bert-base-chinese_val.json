@@ -1,0 +1,218 @@
+{
+  "accuracy": 0.43757431629013077,
+  "macro_f1": 0.2531382030394304,
+  "weighted_f1": 0.45839974490999813,
+  "classification_report": {
+    "Australia": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1-score": 0.0,
+      "support": 0.0
+    },
+    "Cambodia": {
+      "precision": 0.21153846153846154,
+      "recall": 0.3333333333333333,
+      "f1-score": 0.25882352941176473,
+      "support": 33.0
+    },
+    "Canada": {
+      "precision": 0.3333333333333333,
+      "recall": 1.0,
+      "f1-score": 0.5,
+      "support": 1.0
+    },
+    "Colombia": {
+      "precision": 0.5,
+      "recall": 1.0,
+      "f1-score": 0.6666666666666666,
+      "support": 1.0
+    },
+    "Costa Rica": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1-score": 0.0,
+      "support": 1.0
+    },
+    "Ecuador": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1-score": 0.0,
+      "support": 0.0
+    },
+    "France": {
+      "precision": 0.14285714285714285,
+      "recall": 0.3333333333333333,
+      "f1-score": 0.2,
+      "support": 3.0
+    },
+    "Germany": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1-score": 0.0,
+      "support": 1.0
+    },
+    "India": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1-score": 0.0,
+      "support": 0.0
+    },
+    "Indonesia": {
+      "precision": 0.8,
+      "recall": 0.27218934911242604,
+      "f1-score": 0.40618101545253865,
+      "support": 338.0
+    },
+    "Japan": {
+      "precision": 0.48484848484848486,
+      "recall": 0.5925925925925926,
+      "f1-score": 0.5333333333333333,
+      "support": 27.0
+    },
+    "Kyrgyzstan": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1-score": 0.0,
+      "support": 1.0
+    },
+    "Laos": {
+      "precision": 0.4084507042253521,
+      "recall": 0.725,
+      "f1-score": 0.5225225225225225,
+      "support": 40.0
+    },
+    "Madagascar": {
+      "precision": 0.07692307692307693,
+      "recall": 0.2857142857142857,
+      "f1-score": 0.12121212121212122,
+      "support": 7.0
+    },
+    "Malaysia": {
+      "precision": 0.25,
+      "recall": 0.8333333333333334,
+      "f1-score": 0.38461538461538464,
+      "support": 6.0
+    },
+    "Mexico": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1-score": 0.0,
+      "support": 0.0
+    },
+    "Mongolia": {
+      "precision": 0.25,
+      "recall": 0.5833333333333334,
+      "f1-score": 0.35,
+      "support": 12.0
+    },
+    "Myanmar": {
+      "precision": 0.3333333333333333,
+      "recall": 0.5853658536585366,
+      "f1-score": 0.4247787610619469,
+      "support": 41.0
+    },
+    "New Zealand": {
+      "precision": 0.16666666666666666,
+      "recall": 0.5,
+      "f1-score": 0.25,
+      "support": 2.0
+    },
+    "North Korea": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1-score": 0.0,
+      "support": 1.0
+    },
+    "Panama": {
+      "precision": 0.22857142857142856,
+      "recall": 0.7272727272727273,
+      "f1-score": 0.34782608695652173,
+      "support": 11.0
+    },
+    "Peru": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1-score": 0.0,
+      "support": 2.0
+    },
+    "Philippines": {
+      "precision": 0.24096385542168675,
+      "recall": 0.6896551724137931,
+      "f1-score": 0.35714285714285715,
+      "support": 29.0
+    },
+    "Russia": {
+      "precision": 0.2,
+      "recall": 0.6666666666666666,
+      "f1-score": 0.3076923076923077,
+      "support": 3.0
+    },
+    "South Africa": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1-score": 0.0,
+      "support": 1.0
+    },
+    "South Korea": {
+      "precision": 0.5614035087719298,
+      "recall": 0.5614035087719298,
+      "f1-score": 0.5614035087719298,
+      "support": 57.0
+    },
+    "Sweden": {
+      "precision": 0.25,
+      "recall": 0.5,
+      "f1-score": 0.3333333333333333,
+      "support": 2.0
+    },
+    "Thailand": {
+      "precision": 0.6067415730337079,
+      "recall": 0.4153846153846154,
+      "f1-score": 0.4931506849315068,
+      "support": 130.0
+    },
+    "Turkey": {
+      "precision": 0.2857142857142857,
+      "recall": 0.6666666666666666,
+      "f1-score": 0.4,
+      "support": 3.0
+    },
+    "USA": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1-score": 0.0,
+      "support": 2.0
+    },
+    "Venezuela": {
+      "precision": 0.1111111111111111,
+      "recall": 0.3333333333333333,
+      "f1-score": 0.16666666666666666,
+      "support": 3.0
+    },
+    "Vietnam": {
+      "precision": 0.8529411764705882,
+      "recall": 0.6987951807228916,
+      "f1-score": 0.7682119205298014,
+      "support": 83.0
+    },
+    "Yemen": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1-score": 0.0,
+      "support": 0.0
+    },
+    "accuracy": 0.43757431629013077,
+    "macro avg": {
+      "precision": 0.22107267099456332,
+      "recall": 0.3728294935043575,
+      "f1-score": 0.2531382030394304,
+      "support": 841.0
+    },
+    "weighted avg": {
+      "precision": 0.6189932326331634,
+      "recall": 0.43757431629013077,
+      "f1-score": 0.45839974490999813,
+      "support": 841.0
+    }
+  }
+}

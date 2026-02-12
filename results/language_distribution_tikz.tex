@@ -1,0 +1,24 @@
+\begin{figure}[htbp]
+\centering
+\begin{tikzpicture}
+\begin{axis}[
+    width=0.85\textwidth,
+    height=7.2cm,
+    xbar,
+    xlabel={Count},
+    ytick={0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15},
+    yticklabels={{Other}, {Turkey}, {Venezuela}, {Malaysia}, {Madagascar}, {Panama}, {Mongolia}, {Japan}, {Philippines}, {Cambodia}, {Laos}, {Myanmar}, {South Korea}, {Vietnam}, {Thailand}, {Indonesia}},
+    y dir=normal,
+    bar width=8pt,
+    xmin=0,
+    enlarge y limits={abs=0.4},
+    nodes near coords,
+    nodes near coords align={horizontal},
+    every node near coord/.append style={font=\scriptsize},
+]
+\addplot[fill=blue!60, draw=blue!80] table[x=count, y=idx] {language_counts.dat};
+\end{axis}
+\end{tikzpicture}
+\caption{Sample counts per native language (top 15 + Other).}
+\label{fig:language-distribution}
+\end{figure}
