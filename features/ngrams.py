@@ -2,10 +2,7 @@
 
 import jieba
 from sklearn.feature_extraction.text import TfidfVectorizer
-<<<<<<< HEAD
-=======
 from tqdm import tqdm
->>>>>>> e689c55 (add more scripts and features)
 
 import config
 
@@ -25,11 +22,6 @@ def char_ngram_vectorizer(
     )
 
 
-<<<<<<< HEAD
-def _jieba_tokenizer(text: str) -> list[str]:
-    """Tokenize Chinese text with jieba."""
-    return list(jieba.cut(text))
-=======
 class _JiebaTokenizerWithProgress:
     """Jieba tokenizer that updates a shared tqdm progress bar."""
 
@@ -52,25 +44,11 @@ class _JiebaTokenizerWithProgress:
         if self._pbar is not None:
             self._pbar.close()
             self._pbar = None
->>>>>>> e689c55 (add more scripts and features)
 
 
 def word_ngram_vectorizer(
     ngram_range: tuple[int, int] | None = None,
     max_features: int | None = None,
-<<<<<<< HEAD
-) -> TfidfVectorizer:
-    """Return a TF-IDF vectorizer for word n-grams (jieba segmentation)."""
-    ngram_range = ngram_range or config.SVM_CONFIG["word_ngram_range"]
-    max_features = max_features or config.SVM_CONFIG["max_features"]
-    return TfidfVectorizer(
-        tokenizer=_jieba_tokenizer,
-        ngram_range=ngram_range,
-        max_features=max_features,
-        sublinear_tf=True,
-        token_pattern=None,  # suppress warning when using custom tokenizer
-    )
-=======
 ) -> tuple[TfidfVectorizer, _JiebaTokenizerWithProgress]:
     """Return a TF-IDF vectorizer for word n-grams (jieba segmentation).
 
@@ -88,4 +66,3 @@ def word_ngram_vectorizer(
         token_pattern=None,
     )
     return vec, tokenizer
->>>>>>> e689c55 (add more scripts and features)

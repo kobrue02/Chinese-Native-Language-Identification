@@ -1,7 +1,3 @@
-<<<<<<< HEAD
-"""Train and evaluate the SVM baseline for NLI."""
-
-=======
 """Train and evaluate traditional ML classifiers on NLI features.
 
 Usage:
@@ -15,22 +11,15 @@ Usage:
 """
 
 import argparse
->>>>>>> e689c55 (add more scripts and features)
 import time
 
 from data_loader import load_and_split
 from features import build_features
-<<<<<<< HEAD
-from models.svm import grid_search_svm
-=======
 from models.svm import build_classifier, grid_search_svm
->>>>>>> e689c55 (add more scripts and features)
 from evaluate import evaluate_and_report
 
 
 def main():
-<<<<<<< HEAD
-=======
     parser = argparse.ArgumentParser()
     parser.add_argument(
         "--model",
@@ -56,21 +45,12 @@ def main():
     )
     args = parser.parse_args()
 
->>>>>>> e689c55 (add more scripts and features)
     # ── Load data ──────────────────────────────────────────────────────────
     print("Loading data...")
     train, val, test, le = load_and_split()
     label_names = list(le.classes_)
 
     # ── Extract features ──────────────────────────────────────────────────
-<<<<<<< HEAD
-    print("Extracting features (this may take a few minutes)...")
-    t0 = time.time()
-    X_train, X_val, X_test, vectorizers = build_features(
-        train["text"].tolist(),
-        val["text"].tolist(),
-        test["text"].tolist(),
-=======
     print("Extracting features...")
     t0 = time.time()
     X_train, X_val, X_test, _ = build_features(
@@ -79,7 +59,6 @@ def main():
         test["text"].tolist(),
         use_dependency=args.dep,
         use_radicals=args.radicals,
->>>>>>> e689c55 (add more scripts and features)
     )
     print(f"Feature extraction took {time.time() - t0:.1f}s")
     print(f"Feature matrix shape: {X_train.shape}")
@@ -88,22 +67,6 @@ def main():
     y_val = val["label"].values
     y_test = test["label"].values
 
-<<<<<<< HEAD
-    # ── Grid search on train, pick best C ─────────────────────────────────
-    print("\nRunning grid search...")
-    gs = grid_search_svm(X_train, y_train)
-    best_model = gs.best_estimator_
-
-    # ── Evaluate on validation set ────────────────────────────────────────
-    y_val_pred = best_model.predict(X_val)
-    print("\n── Validation Set ──")
-    evaluate_and_report(y_val, y_val_pred, label_names, "SVM_val")
-
-    # ── Evaluate on test set ──────────────────────────────────────────────
-    y_test_pred = best_model.predict(X_test)
-    print("\n── Test Set ──")
-    evaluate_and_report(y_test, y_test_pred, label_names, "SVM_test")
-=======
     # ── Train ─────────────────────────────────────────────────────────────
     if args.model == "svm" and args.gridsearch:
         print("\nRunning SVM grid search...")
@@ -127,7 +90,6 @@ def main():
     tag = f"{args.model}_test"
     print(f"\n── Test Set ({args.model}) ──")
     evaluate_and_report(y_test, y_test_pred, label_names, tag)
->>>>>>> e689c55 (add more scripts and features)
 
 
 if __name__ == "__main__":

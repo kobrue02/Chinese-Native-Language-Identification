@@ -12,7 +12,7 @@ import argparse
 
 import numpy as np
 import torch
-from sklearn.linear_model import LogisticRegression
+from sklearn.neural_network import MLPClassifier
 from torch.utils.data import DataLoader, Dataset
 from tqdm import trange
 from transformers import AutoModel, AutoTokenizer
@@ -155,14 +155,16 @@ def main():
     y_val = val_df["label"].values
     y_test = test_df["label"].values
 
-    # ── Train linear probe ────────────────────────────────────────────────
-    print("Training LogisticRegression probe...")
-    clf = LogisticRegression(
-        max_iter=2000,
-        class_weight="balanced",
-        C=1.0,
+    # ── Train MLP probe ────────────────────────────────────────────────
+    print("Training MLP probe...")
+    clf = MLPClassifier(
+        hidden_layer_sizes=(512, 256),
+        activation="relu",
+        max_iter=200,
+        early_stopping=True,
+        validation_fraction=0.1,
         random_state=config.RANDOM_SEED,
-        verbose=1,
+        verbose=True,
     )
     clf.fit(X_train, y_train)
 

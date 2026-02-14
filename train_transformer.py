@@ -1,7 +1,3 @@
-<<<<<<< HEAD
-"""Fine-tune and evaluate a transformer model for NLI."""
-
-=======
 """Fine-tune and evaluate a transformer model for NLI.
 
 Usage:
@@ -11,18 +7,13 @@ Usage:
 """
 
 import argparse
->>>>>>> e689c55 (add more scripts and features)
 import time
 
 import numpy as np
 import torch
-<<<<<<< HEAD
-from torch.utils.data import DataLoader
-=======
 from sklearn.metrics import f1_score
 from torch.utils.data import DataLoader
 from tqdm import tqdm
->>>>>>> e689c55 (add more scripts and features)
 from transformers import get_linear_schedule_with_warmup
 
 import config
@@ -42,18 +33,11 @@ def compute_class_weights(labels: np.ndarray, num_classes: int) -> torch.Tensor:
     return torch.tensor(weights, dtype=torch.float32)
 
 
-<<<<<<< HEAD
-def train_epoch(model, loader, optimizer, scheduler, criterion):
-    model.train()
-    total_loss = 0
-    for batch in loader:
-=======
 def train_epoch(model, loader, optimizer, scheduler, criterion, epoch):
     model.train()
     total_loss = 0
     pbar = tqdm(loader, desc=f"  Train epoch {epoch}", leave=False)
     for batch in pbar:
->>>>>>> e689c55 (add more scripts and features)
         batch = {k: v.to(DEVICE) for k, v in batch.items()}
         labels = batch.pop("labels")
         outputs = model(**batch)
@@ -64,27 +48,16 @@ def train_epoch(model, loader, optimizer, scheduler, criterion, epoch):
         scheduler.step()
         optimizer.zero_grad()
         total_loss += loss.item() * len(labels)
-<<<<<<< HEAD
-=======
         pbar.set_postfix(loss=f"{loss.item():.4f}")
->>>>>>> e689c55 (add more scripts and features)
     return total_loss / len(loader.dataset)
 
 
 @torch.no_grad()
-<<<<<<< HEAD
-def evaluate_model(model, loader, criterion):
-    model.eval()
-    total_loss = 0
-    all_preds, all_labels = [], []
-    for batch in loader:
-=======
 def evaluate_model(model, loader, criterion, desc="Eval"):
     model.eval()
     total_loss = 0
     all_preds, all_labels = [], []
     for batch in tqdm(loader, desc=f"  {desc}", leave=False):
->>>>>>> e689c55 (add more scripts and features)
         batch = {k: v.to(DEVICE) for k, v in batch.items()}
         labels = batch.pop("labels")
         outputs = model(**batch)
@@ -99,9 +72,6 @@ def evaluate_model(model, loader, criterion, desc="Eval"):
 
 
 def main():
-<<<<<<< HEAD
-    print(f"Device: {DEVICE}")
-=======
     parser = argparse.ArgumentParser()
     parser.add_argument(
         "--model",
@@ -114,7 +84,6 @@ def main():
 
     print(f"Device: {DEVICE}")
     print(f"Model:  {model_name}")
->>>>>>> e689c55 (add more scripts and features)
 
     # ── Load data ──────────────────────────────────────────────────────────
     print("Loading data...")
@@ -123,48 +92,31 @@ def main():
     num_classes = len(label_names)
 
     # ── Load model & tokenizer ────────────────────────────────────────────
-<<<<<<< HEAD
-    model_name = CFG["model_name"]
-=======
->>>>>>> e689c55 (add more scripts and features)
     print(f"Loading {model_name}...")
     model, tokenizer = load_model_and_tokenizer(num_classes, model_name)
     model = model.to(DEVICE)
 
     # ── Create datasets ───────────────────────────────────────────────────
-<<<<<<< HEAD
-    print("Tokenizing texts...")
-=======
->>>>>>> e689c55 (add more scripts and features)
     train_dataset = NLIDataset(
         train_df["text"].tolist(),
         train_df["label"].tolist(),
         tokenizer,
         CFG["max_length"],
-<<<<<<< HEAD
-=======
         desc="Tokenizing train",
->>>>>>> e689c55 (add more scripts and features)
     )
     val_dataset = NLIDataset(
         val_df["text"].tolist(),
         val_df["label"].tolist(),
         tokenizer,
         CFG["max_length"],
-<<<<<<< HEAD
-=======
         desc="Tokenizing val",
->>>>>>> e689c55 (add more scripts and features)
     )
     test_dataset = NLIDataset(
         test_df["text"].tolist(),
         test_df["label"].tolist(),
         tokenizer,
         CFG["max_length"],
-<<<<<<< HEAD
-=======
         desc="Tokenizing test",
->>>>>>> e689c55 (add more scripts and features)
     )
 
     train_loader = DataLoader(train_dataset, batch_size=CFG["batch_size"], shuffle=True)
@@ -190,19 +142,10 @@ def main():
 
     for epoch in range(1, CFG["epochs"] + 1):
         t0 = time.time()
-<<<<<<< HEAD
-        train_loss = train_epoch(model, train_loader, optimizer, scheduler, criterion)
-        val_loss, val_preds, val_labels = evaluate_model(model, val_loader, criterion)
-        elapsed = time.time() - t0
-
-        from sklearn.metrics import f1_score
-
-=======
         train_loss = train_epoch(model, train_loader, optimizer, scheduler, criterion, epoch)
         val_loss, val_preds, val_labels = evaluate_model(model, val_loader, criterion, "Val")
         elapsed = time.time() - t0
 
->>>>>>> e689c55 (add more scripts and features)
         val_f1 = f1_score(val_labels, val_preds, average="macro", zero_division=0)
         print(
             f"Epoch {epoch:3d} | "
@@ -224,11 +167,7 @@ def main():
     model = model.to(DEVICE)
 
     # ── Evaluate on test set ──────────────────────────────────────────────
-<<<<<<< HEAD
-    _, test_preds, test_labels = evaluate_model(model, test_loader, criterion)
-=======
     _, test_preds, test_labels = evaluate_model(model, test_loader, criterion, "Test")
->>>>>>> e689c55 (add more scripts and features)
     safe_name = model_name.replace("/", "_")
     evaluate_and_report(test_labels, test_preds, label_names, safe_name)
 
