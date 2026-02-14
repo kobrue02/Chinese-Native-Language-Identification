@@ -48,7 +48,7 @@ def extract_particle_features(texts: list[str]) -> np.ndarray:
     features = np.zeros((len(texts), n_features), dtype=np.float64)
 
     for i, text in enumerate(tqdm(texts, desc="Particle context")):
-        words_and_flags = list(pseg.cut(text))
+        words_and_flags = [(w.word, w.flag) for w in pseg.cut(text)]
         n_tokens = len(words_and_flags) or 1
 
         for p_idx, particle in enumerate(PARTICLES):
