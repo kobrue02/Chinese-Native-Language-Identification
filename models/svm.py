@@ -22,6 +22,7 @@ def build_classifier(name: str = "logreg"):
             solver="saga",
             random_state=seed,
             n_jobs=-1,
+            verbose=1,
         )
     elif name == "sgd":
         return SGDClassifier(
@@ -30,6 +31,7 @@ def build_classifier(name: str = "logreg"):
             max_iter=1_000,
             random_state=seed,
             n_jobs=-1,
+            verbose=1,
         )
     elif name == "svm":
         return LinearSVC(
@@ -37,6 +39,7 @@ def build_classifier(name: str = "logreg"):
             class_weight="balanced",
             max_iter=10_000,
             random_state=seed,
+            verbose=1,
         )
     elif name == "mlp":
         return MLPClassifier(
@@ -46,6 +49,7 @@ def build_classifier(name: str = "logreg"):
             early_stopping=True,
             validation_fraction=0.1,
             random_state=seed,
+            verbose=True,
         )
     else:
         raise ValueError(f"Unknown classifier: {name}")
